@@ -128,7 +128,7 @@ outbreak_step <- function(case_data = NULL, disp.iso = NULL, disp.com = NULL, r0
 
   # If you are asymptomatic, your isolation time is Inf
   prob_samples[, isolated_time := ifelse(vect_isTRUE(asym), Inf,
-                                                      vect_min(onset + delayfn(1), vect_max(onset, infector_iso_time)))]
+                                                      onset + delayfn(1))]
 
 
   # Chop out unneeded sample columns
